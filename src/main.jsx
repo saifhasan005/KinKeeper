@@ -9,13 +9,12 @@ import Timeline from './Component/Timeline/Timeline.jsx';
 import States from './Component/States/States.jsx';
 import Homepage from './Component/Homepage/Homepage.jsx';
 import NotFound from './404Error/NotFound.jsx';
-import Banner from './Component/Banner/Banner.jsx';
+import FriendDetails from './Component/FriendDetails/FriendDetails.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout></RootLayout>,
-    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: '/',
@@ -23,18 +22,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/timeline',
-        element:<>
-        <Banner></Banner> <Timeline></Timeline>
-        </>
+        element:<Timeline></Timeline>
       },
       {
         path: '/states',
         element: <States></States>
       },{
-        path: '*',
-        element: <NotFound></NotFound>
+        path: '/friendDetails/:id',
+        element: <FriendDetails/>
       }
-    ]
+    ],
+    errorElement: <NotFound></NotFound>
   },
 ]);
 
