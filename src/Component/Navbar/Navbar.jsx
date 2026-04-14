@@ -1,30 +1,58 @@
-import React from 'react';
-import { IoHomeSharp } from "react-icons/io5";
+import React, { useState } from 'react';
+import { IoHomeSharp, IoClose, IoMenu } from "react-icons/io5";
 import { NavLink } from 'react-router';
 import { MdMoreTime } from "react-icons/md";
 import { BiSolidDashboard } from "react-icons/bi";
+
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     const navLinkClass = ({ isActive }) =>
-        `font-semibold pb-[5px] ${isActive ? 'btn-success' : ''}`;
+        `flex items-center gap-1 btn ${isActive ? 'btn-success' : ''}`;
+
     return (
         <div className='shadow bg-white sticky top-0 z-50'>
-            <div className='container mx-auto flex justify-between py-4'>
-                <div>
-                    <h1 className='text-[24px]'><span className='font-bold text-[#1f2a38]'>Keen</span><span className='font-semibold text-[#244d3f]'>Keeper</span></h1>
-                </div>
-                {/* menu section */}
-                <div className='flex gap-4'>
+            <div className='container mx-auto flex justify-between items-center py-4 px-4'>
+                
+                <h1 className='text-[24px]'>
+                    <span className='font-bold text-[#1f2a38]'>Keen</span>
+                    <span className='font-semibold text-[#244d3f]'>Keeper</span>
+                </h1>
+
+                {/* Desktop menu */}
+                <div className='hidden md:flex gap-4'>
                     <NavLink className={navLinkClass} to={'/'}>
-                        <button className='flex items-center gap-1 btn'><span><IoHomeSharp /></span>Home</button>
+                        <IoHomeSharp />Home
                     </NavLink>
                     <NavLink className={navLinkClass} to={'/timeline'}>
-                        <button className='flex items-center gap-1 btn'><span><MdMoreTime /></span>Timeline</button>
+                        <MdMoreTime />Timeline
                     </NavLink>
                     <NavLink className={navLinkClass} to={'/states'}>
-                        <button className='flex items-center gap-1 btn'><span><BiSolidDashboard /></span>States</button>
+                        <BiSolidDashboard />States
                     </NavLink>
                 </div>
+
+                {/* Mobile hamburger */}
+                <button className='md:hidden btn btn-ghost text-xl'
+                    onClick={() => setMenuOpen(!menuOpen)}>
+                    {menuOpen ? <IoClose /> : <IoMenu />}
+                </button>
             </div>
+
+            {/* Mobile dropdown */}
+            {menuOpen && (
+                <div className='md:hidden flex flex-col gap-2 px-4 pb-4'>
+                    <NavLink className={navLinkClass} to={'/'} onClick={() => setMenuOpen(false)}>
+                        <IoHomeSharp />Home
+                    </NavLink>
+                    <NavLink className={navLinkClass} to={'/timeline'} onClick={() => setMenuOpen(false)}>
+                        <MdMoreTime />Timeline
+                    </NavLink>
+                    <NavLink className={navLinkClass} to={'/states'} onClick={() => setMenuOpen(false)}>
+                        <BiSolidDashboard />States
+                    </NavLink>
+                </div>
+            )}
         </div>
     );
 };

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Arif Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "arif.hossain@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": "college",
+    "bio": "Met in university. We used to stay up late solving programming problems together.",
+    "goal": 14,
+    "next_due_date": "2025-07-15"
+  },
+  {
+    "id": 2,
+    "name": "Sara Ahmed",
+    "picture": "https://randomuser.me/api/portraits/women/44.jpg",
+    "email": "sara.ahmed@outlook.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": "work", 
+    "bio": "My first manager at the job. She taught me how to handle pressure gracefully.",
+    "goal": 7,
+    "next_due_date": "2025-07-10"
+  },
+  {
+    "id": 3,
+    "name": "Mehedi Rana",
+    "picture": "https://randomuser.me/api/portraits/men/56.jpg",
+    "email": "mehedi.rana@yahoo.com",
+    "days_since_contact": 30,
+    "status": "overdue",
+    "tags": "work",
+    "bio": "Grew up on the same street. We used to play cricket every evening after school.",
+    "goal": 21,
+    "next_due_date": "2025-07-05"
+  },
+  {
+    "id": 4,
+    "name": "Nadia Islam",
+    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "email": "nadia.islam@gmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags":  "close friend",
+    "bio": "Our families have been close for decades. She feels like a sister.",
+    "goal": 7,
+    "next_due_date": "2025-07-12"
+  },
+  {
+    "id": 5,
+    "name": "Tanvir Chowdhury",
+    "picture": "https://randomuser.me/api/portraits/men/71.jpg",
+    "email": "tanvir.chowdhury@proton.me",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": "college",
+    "bio": "Explored three countries together. Always up for a spontaneous road trip.",
+    "goal": 30,
+    "next_due_date": "2025-06-28"
+  },
+  {
+    "id": 6,
+    "name": "Fariha Begum",
+    "picture": "https://randomuser.me/api/portraits/women/12.jpg",
+    "email": "fariha.begum@gmail.com",
+    "days_since_contact": 10,
+    "status": "on-track",
+    "tags": "work",
+    "bio": "We survived the same brutal project deadline. Bonded over bad coffee and long nights.",
+    "goal": 14,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 7,
+    "name": "Rakib Uddin",
+    "picture": "https://randomuser.me/api/portraits/men/85.jpg",
+    "email": "rakib.uddin@hotmail.com",
+    "days_since_contact": 60,
+    "status": "overdue",
+    "tags": "work",
+    "bio": "Best friend from high school. Life took us to different cities but the bond remains.",
+    "goal": 30,
+    "next_due_date": "2025-06-20"
+  },
+  {
+    "id": 8,
+    "name": "Sumaiya Khan",
+    "picture": "https://randomuser.me/api/portraits/women/29.jpg",
+    "email": "sumaiya.khan@gmail.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": "college",
+    "bio": "We met at a reading club and immediately clicked over our love for literary fiction.",
+    "goal": 7,
+    "next_due_date": "2025-07-11"
+  },
+  {
+    "id": 9,
+    "name": "Imran Kabir",
+    "picture": "https://randomuser.me/api/portraits/men/19.jpg",
+    "email": "imran.kabir@gmail.com",
+    "days_since_contact": 22,
+    "status": "overdue",
+    "tags":  "college",
+    "bio": "Started going to the gym together in second year. Keeps me accountable.",
+    "goal": 14,
+    "next_due_date": "2025-07-02"
+  },
+  {
+    "id": 10,
+    "name": "Lamia Sultana",
+    "picture": "https://randomuser.me/api/portraits/women/55.jpg",
+    "email": "lamia.sultana@outlook.com",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": "close friend",
+    "bio": "A senior developer who guided me through my first open source contribution.",
+    "goal": 14,
+    "next_due_date": "2025-07-16"
+  }
+]

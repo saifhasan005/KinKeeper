@@ -9,26 +9,32 @@ import Timeline from './Component/Timeline/Timeline.jsx';
 import States from './Component/States/States.jsx';
 import Homepage from './Component/Homepage/Homepage.jsx';
 import NotFound from './404Error/NotFound.jsx';
+import Banner from './Component/Banner/Banner.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout></RootLayout>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
-        path: '/homepage',
+        path: '/',
         element: <Homepage></Homepage>
       },
       {
         path: '/timeline',
-        element:<Timeline></Timeline>
+        element:<>
+        <Banner></Banner> <Timeline></Timeline>
+        </>
       },
       {
         path: '/states',
         element: <States></States>
+      },{
+        path: '*',
+        element: <NotFound></NotFound>
       }
-    ],
-    errorElement: <NotFound></NotFound>
+    ]
   },
 ]);
 
