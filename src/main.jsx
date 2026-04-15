@@ -10,6 +10,7 @@ import States from './Component/States/States.jsx';
 import Homepage from './Component/Homepage/Homepage.jsx';
 import NotFound from './404Error/NotFound.jsx';
 import FriendDetails from './Component/FriendDetails/FriendDetails.jsx';
+import FriendContext from './Context/FriendContext.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,14 +23,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/timeline',
-        element:<Timeline></Timeline>
+        element: <Timeline></Timeline>
       },
       {
         path: '/states',
         element: <States></States>
-      },{
+      }, {
         path: '/friendDetails/:id',
-        element: <FriendDetails/>
+        element: <FriendDetails />
       }
     ],
     errorElement: <NotFound></NotFound>
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
-    <RouterProvider router={router}></RouterProvider>
+    <FriendContext>
+      <RouterProvider router={router}></RouterProvider>
+    </FriendContext>
   </StrictMode>,
 )

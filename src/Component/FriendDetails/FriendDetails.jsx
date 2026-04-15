@@ -25,7 +25,6 @@ const FriendDetails = () => {
         <div className='max-w-[1300px] mx-auto px-6 mt-[55px]'>
             <div className='grid grid-cols-1 md:grid-cols-2  items-start'>
 
-                {/* ── left side ── */}
                 <div className='flex flex-col items-center gap-4'>
                     <div className='w-[350px] shadow bg-white rounded-xl p-5 flex flex-col items-center gap-2'>
                         <img src={picture} alt={name}
@@ -49,10 +48,7 @@ const FriendDetails = () => {
                         <button className='btn w-full text-red-500'><MdDelete /> Delete</button>
                     </div>
                 </div>
-
-                {/* ── right side ── */}
                 <FriendDetailsSidebar expectedFriends={expectedFriends} />
-
             </div>
         </div>
     );
