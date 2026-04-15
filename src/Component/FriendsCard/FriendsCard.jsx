@@ -4,13 +4,11 @@ import { Link } from 'react-router';
 const FriendsCard = ({ friend }) => {
     const { name,id, picture, days_since_contact, status, tags } = friend;
     const isOverDue = status === 'overdue';
-
     const tagStyles = {
-        'college':      'bg-blue-100 text-blue-600',
-        'work':         'bg-purple-100 text-purple-600',
-        'close friend': 'bg-pink-100 text-pink-600',
+        'college':'bg-blue-100 text-blue-600',
+        'work':'bg-purple-100 text-purple-600',
+        'close friend':'bg-pink-100 text-pink-600',
     };
-
     return (
         <Link to={`/friendDetails/${id}`} className='bg-white border border-gray-200 rounded-xl p-4 sm:p-5 
                         flex flex-col items-center gap-2 w-full hover:shadow-md transition-shadow'>
@@ -25,7 +23,6 @@ const FriendsCard = ({ friend }) => {
                 ${isOverDue ? 'bg-red-100 text-red-600' : 'bg-green-100 text-green-600'}`}>
                 {status}
             </span>
-
             <span className={`text-xs px-3 py-1 rounded-full font-semibold
                 ${tagStyles[tags] || 'bg-gray-100 text-gray-600'}`}>
                 {tags}

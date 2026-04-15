@@ -13,7 +13,6 @@ const Timeline = () => {
             setLoading(false);
         }, 1500);
     }, []);
-
     if (loading) {
         return (
             <div className="flex justify-center items-center h-screen">

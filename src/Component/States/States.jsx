@@ -3,11 +3,8 @@ import { friendContext } from '../../Context/FriendContext';
 import { Pie, PieChart, Sector, Tooltip } from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#FF6B6B', '#4ECDC4'];
-
-// PieGradient component
 const PieGradient = (props) => {
   const { cx, cy, outerRadius, innerRadius, startAngle, endAngle, index } = props;
-  
   return (
     <g>
       <defs>
@@ -37,7 +34,6 @@ const PieGradient = (props) => {
     </g>
   );
 };
-
 const States = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -49,7 +45,6 @@ const States = () => {
       setError('Context data not available');
     }
   }, [friendContextData]);
-  
   const chartData = [
     { name: 'Calls', value: friendContextData?.callList?.length || 0 },
     { name: 'Messages', value: friendContextData?.messageList?.length || 0 },

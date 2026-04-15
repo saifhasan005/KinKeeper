@@ -11,9 +11,7 @@ const Footer = () => {
                     <span className='font-bold'>Keen</span>
                     <span className='font-semibold'>Keeper</span>
                 </p>
-                <p className='text-gray-400 text-sm sm:text-base'>
-                    Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
-                </p>
+                <p className='text-gray-400 text-sm sm:text-base'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                 <p className='font-bold mt-[8px]'>Social Links</p>
                 <div className='flex mt-[21px] gap-4 items-center justify-center'>
                     <a href="https://instagram.com" target='_blank' rel='noreferrer'>
@@ -27,14 +25,8 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-
-            <div className='border-t border-green-800 mt-6 pt-4 
-                            container mx-auto
-                            flex flex-col sm:flex-row 
-                            justify-between items-center gap-3'>
-                <p className='text-gray-400 text-[12px] sm:text-[14px] text-center sm:text-left'>
-                    © 2026 KeenKeeper. All rights reserved.
-                </p>
+            <div className='border-t border-green-800 mt-6 pt-4 container mx-auto flex flex-col sm:flex-row justify-between items-center gap-3'>
+                <p className='text-gray-400 text-[12px] sm:text-[14px] text-center sm:text-left'>© 2026 KeenKeeper. All rights reserved.</p>
                 <div className='flex gap-4 sm:gap-5 text-gray-400 text-[12px] sm:text-[14px]'>
                     <a className='hover:text-white cursor-pointer'>Privacy</a>
                     <a className='hover:text-white cursor-pointer'>Policy</a>

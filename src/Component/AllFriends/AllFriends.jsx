@@ -22,7 +22,6 @@ const AllFriends = () => {
             </div>
         );
     }
-
     return (
         <div>
             <p className='font-bold  text-3xl text-center mt-[45px]'>Your Friends</p>
