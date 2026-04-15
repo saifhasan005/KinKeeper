@@ -11,7 +11,7 @@ const Navbar = () => {
         `flex items-center gap-1 btn ${isActive ? 'btn-success' : ''}`;
 
     return (
-        <div className='shadow bg-white sticky top-0 z-50'>
+        <div className='shadow bg-green-200 sticky top-0 z-50'>
             <div className='container mx-auto flex justify-between items-center py-4 px-4'>
                 
                 <h1 className='text-[24px]'>
@@ -19,7 +19,7 @@ const Navbar = () => {
                     <span className='font-semibold text-[#244d3f]'>Keeper</span>
                 </h1>
 
-                {/* Desktop menu */}
+
                 <div className='hidden md:flex gap-4'>
                     <NavLink className={navLinkClass} to={'/'}>
                         <IoHomeSharp />Home
@@ -30,16 +30,13 @@ const Navbar = () => {
                     <NavLink className={navLinkClass} to={'/states'}>
                         <BiSolidDashboard />States
                     </NavLink>
+                    
                 </div>
-
-                {/* Mobile hamburger */}
                 <button className='md:hidden btn btn-ghost text-xl'
                     onClick={() => setMenuOpen(!menuOpen)}>
                     {menuOpen ? <IoClose /> : <IoMenu />}
                 </button>
             </div>
-
-            {/* Mobile dropdown */}
             {menuOpen && (
                 <div className='md:hidden flex flex-col gap-2 px-4 pb-4'>
                     <NavLink className={navLinkClass} to={'/'} onClick={() => setMenuOpen(false)}>

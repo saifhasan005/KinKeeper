@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { MdOutlineArchive, MdDelete } from "react-icons/md";
 import FriendDetailsSidebar from '../FriendDetailsSidebar/FriendDetailsSidebar';
@@ -8,13 +8,27 @@ const friendPromise = fetch('/data.json').then((res) => res.json());
 const FriendDetails = () => {
     const { id } = useParams();
     const friends = use(friendPromise);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1500);
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <span className="loading loading-spinner loading-lg"></span>
+            </div>
+        );
+    }
     const expectedFriends = friends.find(fr => fr.id == id);
 
     if (!expectedFriends) return <p>Friend not found</p>;
 
     const { name, picture, days_since_contact, status, tags, bio } = expectedFriends;
     const isOverDue = status === 'overdue';
-
     const tagStyles = {
         'college': 'bg-blue-100 text-blue-600',
         'work': 'bg-purple-100 text-purple-600',
