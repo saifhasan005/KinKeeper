@@ -10,5 +10,5 @@ HTML5 , CSS3 , Javascript , React.js , DaisyUI, TailwindCSS
 1.Friend Management: Track days since last contact with status indicators (On-track, Overdue, etc.).
 2.Interactive Timeline: Log and filter interactions like Calls, Texts, and Video calls.
 3.Friendship Analytics: Visual representation of interaction history using Pie Charts.
-4.Responsive UI: Fully optimized for Mobile, Tablet, and Desktop.
+4.Responsive UI: Fully optimized for Mobile, Tablet, and Desktop.<Br>
 5.Custom 404 & Loading: Enhanced UX with custom error handling and loading animations.
