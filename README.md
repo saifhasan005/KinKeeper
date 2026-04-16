@@ -1,16 +1,14 @@
-# React + Vite
+# Kinkeeper
+KeenKeeper is a professional friendship management application built to help users track their interactions and maintain long-term relationships.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology
+HTML5 , CSS3 , Javascript , React.js , DaisyUI, TailwindCSS
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Live Url
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://kinkeeeper-test.netlify.app/)
+## Key Features
+1.Friend Management: Track days since last contact with status indicators (On-track, Overdue, etc.).
+2.Interactive Timeline: Log and filter interactions like Calls, Texts, and Video calls.
+3.Friendship Analytics: Visual representation of interaction history using Pie Charts.
+4.Responsive UI: Fully optimized for Mobile, Tablet, and Desktop.
+5.Custom 404 & Loading: Enhanced UX with custom error handling and loading animations.

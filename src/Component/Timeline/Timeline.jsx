@@ -7,85 +7,86 @@ import { FaVideo } from 'react-icons/fa';
 const Timeline = () => {
     const { callList, messageList, videoCallList } = useContext(friendContext);
     const [loading, setLoading] = useState(true);
+    const [filter, setFilter] = useState('all');
+    const date = new Date();
 
     useEffect(() => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1500);
+        setTimeout(() => setLoading(false), 1500);
     }, []);
+
     if (loading) {
         return (
             <div className="flex justify-center items-center h-screen">
                 <span className="loading loading-spinner loading-lg"></span>
             </div>
         );
-    }
+    };
     return (
-        <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8'>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8">Timeline</h1>
-            <div className="mb-8 sm:mb-10">
-                <div className="flex items-center gap-2 mb-4">
-                    <IoCall className="text-green-500 text-xl sm:text-2xl" />
-                    <h2 className="text-lg sm:text-xl font-semibold">Calls ({callList.length})</h2>
-                </div>
-                {callList.length === 0 ? (
-                    <p className="text-gray-400 text-sm sm:text-base">Not Found Any Call History</p>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                        {callList.map(friend => (
-                            <div key={friend.id} className="shadow rounded-xl p-3 sm:p-4 flex items-center gap-3 hover:shadow-lg transition-shadow duration-200">
-                                <img src={friend.picture} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
-                                <div>
-                                    <p className="font-semibold text-sm sm:text-base">{friend.name}</p>
-                                    <p className="text-xs sm:text-sm text-green-500">Called</p>
-                                </div>
-                            </div>
-                        ))}
+        <div className='container mx-auto px-4 py-4'>
+            <h1 className="text-2xl font-bold mb-2">Timeline</h1>
+            <select 
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className="mb-8 px-4 py-2 border rounded-lg">
+                <option value="all">All Activities</option>
+                <option value="call">Calls</option>
+                <option value="message">Messages</option>
+                <option value="video">Video Calls</option>
+            </select>
+            {(filter === 'all' || filter === 'call') && callList.length > 0 && (
+                <div className="mb-8">
+                    <div className='flex items-center gap-2'>
+                        <IoCall/> <h2 className="text-lg font-semibold mb-2">Calls ({callList.length})</h2>
                     </div>
-                )}
-            </div>
-            <div className="mb-8 sm:mb-10">
-                <div className="flex items-center gap-2 mb-4">
-                    <MdMessage className="text-blue-500 text-xl sm:text-2xl" />
-                    <h2 className="text-lg sm:text-xl font-semibold">Messages ({messageList.length})</h2>
-                </div>
-                {messageList.length === 0 ? (
-                    <p className="text-gray-400 text-sm sm:text-base">Not Found Any Message History</p>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                        {messageList.map(friend => (
-                            <div key={friend.id} className="shadow rounded-xl p-3 sm:p-4 flex items-center gap-3 hover:shadow-lg transition-shadow duration-200">
-                                <img src={friend.picture} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
-                                <div>
-                                    <p className="font-semibold text-sm sm:text-base">{friend.name}</p>
-                                    <p className="text-xs sm:text-sm text-blue-500">Messaged</p>
-                                </div>
+                    {callList.map(friend => (
+                        <div key={friend.id} className="shadow rounded-lg p-3 flex items-center gap-3 mb-2">
+                            <img src={friend.picture} className="w-10 h-10 rounded-full" />
+                            <div>
+                                <p className="font-semibold">{friend.name}</p>
+                                <p className='text-blue-400 text-[14px] font-semibold'>Called With {friend.name}</p>
+                                <p className="text-xs  text-gray-400">Date: {date.toLocaleString()}</p>
                             </div>
-                        ))}
-                    </div>
-                )}
-            </div>
-            <div className="mb-8 sm:mb-10">
-                <div className="flex items-center gap-2 mb-4">
-                    <FaVideo className="text-purple-500 text-xl sm:text-2xl" />
-                    <h2 className="text-lg sm:text-xl font-semibold">Video Calls ({videoCallList.length})</h2>
+                        </div>
+                    ))}
                 </div>
-                {videoCallList.length === 0 ? (
-                    <p className="text-gray-400 text-sm sm:text-base">Not Found Any Video Call History</p>
-                ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                        {videoCallList.map(friend => (
-                            <div key={friend.id} className="shadow rounded-xl p-3 sm:p-4 flex items-center gap-3 hover:shadow-lg transition-shadow duration-200">
-                                <img src={friend.picture} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
-                                <div>
-                                    <p className="font-semibold text-sm sm:text-base">{friend.name}</p>
-                                    <p className="text-xs sm:text-sm text-purple-500">Video Called</p>
-                                </div>
-                            </div>
-                        ))}
+            )}
+            {(filter === 'all' || filter === 'message') && messageList.length>0 &&(
+                <div className="mb-8">
+                    <div className='flex items-center gap-2'>
+                        <MdMessage/>
+                        <h2 className="text-lg font-semibold mb-2">Messages ({messageList.length})</h2>
                     </div>
-                )}
-            </div>
+                    {messageList.map(friend => (
+                        <div key={friend.id} className="shadow rounded-lg p-3 flex items-center gap-3 mb-2">
+                            <img src={friend.picture} className="w-10 h-10 rounded-full" />
+                            <div>
+                                <p className="font-semibold">{friend.name}</p>
+                                <p className='font-semibold text-green-500 text-[14px]'>Messaged with {friend.name}</p>
+                                <p className="text-xs text-gray-400">Date: {date.toLocaleString()}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+            {(filter === 'all' || filter === 'video') && videoCallList.length>0 &&(
+                <div className="mb-8">
+                    <div className='flex items-center gap-2'>
+                        <FaVideo/>
+                        <h2 className="text-lg font-semibold mb-2">Video Calls ({videoCallList.length})</h2>
+                    </div>
+                    {videoCallList.map(friend => (
+                        <div key={friend.id} className="shadow rounded-lg p-3 flex items-center gap-3 mb-2">
+                            <img src={friend.picture} className="w-10 h-10 rounded-full" />
+                            <div>
+                                <p className="font-semibold">{friend.name}</p>
+                                <p className='font-semibold text-purple-500 text-[14px]'>Video Called with {friend.name}</p>
+                                <p className="text-xs text-gray-400">Date: {date.toLocaleString()}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+           
         </div>
     );
 };

@@ -28,17 +28,17 @@ const FriendDetailsSidebar = ({ expectedFriends }) => {
             <div className='shadow p-6 mt-[25px]  flex justify-between'>
                 <div>
                     <p className='font-semibold text-[#244d3f]'>Relationship Goal</p>
-                    <p className='text-gray-400'>Connect every {days_since_contact}</p>
+                    <p className='text-gray-400'>Connect every {days_since_contact} days</p>
                 </div>
                 <button className='btn rounded-lg'>Edit</button>
             </div>
 
             <div className='shadow mt-[25px] p-6'>
                 <p className='text-[#244d3f] font-bold text-lg mb-[12px]'>Quick Check-in</p>
-                <div className='flex gap-10 ml-[60px]'>
+                <div className='space-y-5 flex-wrap sm:flex gap-10 ml-[60px]'>
                     <button onClick={()=> handleCall(expectedFriends)} className='shadow w-[118px] items-center p-4 flex flex-col'><IoCall /> Call</button>
                     <button onClick={()=>handleMessage(expectedFriends)} className='shadow w-[118px] items-center p-4 flex flex-col'><MdMessage /> Message</button>
-                    <button onClick={()=>handleVideoCall(expectedFriends)} className='shadow w-[118px] items-center p-4 flex flex-col'><FaVideo /> Video Call</button>
+                    <button onClick={()=>handleVideoCall(expectedFriends)} className='shadow w-[118px] h-[70px] items-center p-4 flex flex-col'><FaVideo /> Video Call</button>
                 </div>
             </div>
         </div>
