@@ -24,9 +24,7 @@ const FriendDetails = () => {
         );
     }
     const expectedFriends = friends.find(fr => fr.id == id);
-
     if (!expectedFriends) return <p>Friend not found</p>;
-
     const { name, picture, days_since_contact, status, tags, bio } = expectedFriends;
     const isOverDue = status === 'overdue';
     const tagStyles = {
